@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy Birthday, Chandu! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <h1>🎉 Happy Birthday, Chandu Akula! 🎉</h1>
+        <h2>Wishing you a day full of joy, love, and endless laughter. 💖</h2>
+
+        <!-- Image container with Birthday Cake and Balloons -->
+        <div class="image-container">
+            <div class="image-item">
+                <img src="../../ImportedPhoto.738349471.171665.jpeg" alt="Birthday Cake" class="birthday-cake" onclick="showImageMessage('cake')">
+                <p id="cake-message" class="image-message">"Happy birthday Chandu. I look forward to making more beautiful memories with you."</p>
+            </div>
+            <div class="image-item">
+                <img src="../../image_2024_05_25T08_31_13_852Z.png" alt="Balloons" class="balloons" onclick="showImageMessage('balloons')">
+                <p id="balloons-message" class="image-message">"Happy birthday Chandu. I look forward to making more beautiful memories with you."</p>
+            </div>
+        </div>
+
+        <button class="cta-btn" onclick="showMessage()">Click for a Birthday Surprise! 🎁</button>
+    </div>
+
+    <!-- Confetti Animation -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Particle Effect -->
+    <div class="particles"></div>
+
+    <script>
+        // Confetti Animation
+        const canvas = document.getElementById("confettiCanvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let confetti = [];
+
+        function createConfetti() {
+            let size = Math.random() * 10 + 5;
+            let color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+            let x = Math.random() * canvas.width;
+            let y = -10;
+
+            confetti.push({
+                x,
+                y,
+                size,
+                color,
+                speedX: Math.random() * 2 - 1,
+                speedY: Math.random() * 3 + 1
+            });
+        }
+
+        function updateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < confetti.length; i++) {
+                let c = confetti[i];
+                c.x += c.speedX;
+                c.y += c.speedY;
+
+                ctx.beginPath();
+                ctx.arc(c.x, c.y, c.size, 0, 2 * Math.PI);
+                ctx.fillStyle = c.color;
+                ctx.fill();
+                ctx.closePath();
+
+                if (c.y > canvas.height) {
+                    confetti.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+        function animateConfetti() {
+            createConfetti();
+            updateConfetti();
+            requestAnimationFrame(animateConfetti);
+        }
+
+        animateConfetti();
+
+        // Particle Background
+        const particles = document.querySelector('.particles');
+
+        function createParticles(event) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${event.clientX - 10}px`;
+            particle.style.top = `${event.clientY - 10}px`;
+            particles.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 1000);
+        }
+
+        window.addEventListener('mousemove', createParticles);
+
+        // Birthday Surprise Button
+        function showMessage() {
+            alert("🎉 Happy Birthday. I hope you find happiness and peace in the year ahead with your loved once.Thankyou making me relaise.I hope you have been enjoyed u r day🎉 ");
+        }
+
+        // Show message when clicking on the image
+        function showImageMessage(imageType) {
+            // Get the message paragraph for each image
+            const messageElement = document.getElementById(imageType + '-message');
+            let message = '';
+
+            if (imageType === 'cake') {
+                message = " Enjoy your day, it's all about YOU! hope you enjoyed. if our fate is together lets see might next year or else enjoy with u r loved and beloved onces.";
+            } else if (imageType === 'balloons') {
+                message = " Happy moments are here! Let’s float into another amazing year together! Hope you have been recreated your memories with your loved once .";
+            }
+
+            messageElement.textContent = message;
+            messageElement.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

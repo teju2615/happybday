@@ -1,0 +1,119 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec;
+    color: #333;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Main Container */
+#main {
+    position: relative;
+    padding: 40px;
+}
+
+/* Title and Subtitle */
+h1 {
+    font-family: 'Georgia', serif;
+    color: #ff4081;
+
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    color: #407cff;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+/* Image Container (Flexbox for Side-by-Side Layout) */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between the images */
+    margin-bottom: 40px; /* Space between images and button */
+}
+
+.image-item {
+    text-align: center;
+}
+
+.birthday-cake, .balloons {
+    max-width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.birthday-cake:hover, .balloons:hover {
+    transform: scale(1.1);
+}
+
+/* Image Message */
+.image-message {
+    font-size: 2rem;
+    color: #7c1b92;
+    margin-top: 10px;
+    display: none; /* Initially hidden */
+}
+
+/* Button */
+.cta-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #fc3d2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #00edf5;
+}
+
+/* Confetti Canvas */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Particle Effect */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #d2f839b6;
+    border-radius: 50%;
+    animation: particle-animation 1s ease-out forwards;
+}
+
+@keyframes particle-animation {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}

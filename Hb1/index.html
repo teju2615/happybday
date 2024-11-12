@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Day to Celebrate YOU! 🎉</title>
+    <link rel="stylesheet" href="../Hb1/styles.css">
+    
+</head>
+
+<body>
+    <div class="background"></div> <!-- Animated Background -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>🎉 Happy Birthday Chandu 🎉</h1>
+            <p>You're the star today, and this celebration is all about YOU!🥳</p>
+        </header>
+
+        <!-- Main Content Section -->
+        <div class="content">
+            <div class="imgcontent">
+                <!-- Image 1 -->
+                <div class="image-container">
+                    <img src="../image_2024_05_25T08_32_03_913Z.png" alt="Birthday Image 1" class="birthday-image" onclick="showMessage('message1')">
+                    <p id="message1" class="image-message">"Happy birthday Chandu. I look forward to making more beautiful memories with you."</p>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="image-container">
+                    <img src="../ImportedPhoto.738349471.171665.jpeg" alt="Birthday Image 2" class="birthday-image" onclick="showMessage('message2')">
+                    <p id="message2" class="image-message">"Happy birthday!I hope all your wishes come true just as mine have, because I have you. "</p>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="image-container">
+                    <img src="../image_2024_05_25T08_31_13_852Z.png" alt="Birthday Image 4" class="birthday-image" onclick="showMessage('message4')">
+                    <p id="message4" class="image-message">"Happy birthday to the one who makes everything brighter. Your smile is the best gift you could ever give the world. 💖"</p>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="image-container">
+                    <img src="../80C2FFBC-95F9-4BBA-A0D7-BE45409D4ADB.jpg" alt="Birthday Image 5" class="birthday-image" onclick="showMessage('message5')">
+                    <p id="message5" class="image-message">"Happy birthdayto someone who will always hold a special place in my heart.✨"</p>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="image-container">
+                    <img src="../image_2024_05_25T08_30_36_500Z.png" alt="Birthday Image 6" class="birthday-image" onclick="showMessage('message6')">
+                    <p id="message6" class="image-message">"Wishing you a birthday as amazing as you are, and a day full of suprises."</p>
+                </div>
+
+            </div>
+            <p class="message">Your amazing journey began today, and it keeps getting better! 🎂 <span>May your life be filled with endless adventures, laughter, and cake!</span></p>
+            <p class="message">Wishing you all the love in the world, and then some. Here's to another year of living your best life! 💫</p>
+  <p class="message">In love, we have only one choice: to fight for it, fix what breaks, and stand by each other, no matter what.I hope we stand to one on one. </p>
+        </div><!-- Button Section -->
+        <div>
+            <a href="../Hb1/Hb2/index.html">
+                <center>
+                    <button class="btn" onclick="playSurpriseAudio()"> Click 🎶</button>
+                </center>
+            </a>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>Made with 💖. Wishing you happiness all year long!</p>
+        </footer>
+    </div>
+
+    <script>
+        function playSurpriseAudio() {
+            var audio = new Audio('birthday-surprise.mp3'); // Provide the path to your audio file
+            audio.play();
+            alert("🎉 Let the party begin! 🎉");
+        }
+
+        function showMessage(messageId) {
+            var message = document.getElementById(messageId);
+            // Toggle the message visibility when the image is clicked
+            if (message.style.display === "none") {
+                message.style.display = "block";
+            } else {
+                message.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
